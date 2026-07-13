@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
         "Manage Schedules and Appointments",
         "Patient Communication Support",
         "Refills requests and fax management",
-        "Bilingual support for Spanish-speaking patients",
+        "Available support for Spanish-speaking patients",
         "Medical interpretation for Spanish-speaking patients",
 
       ],
