@@ -37,40 +37,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// Carousel functionality
+// Carousel functionality (Updated to Clicks)
 document.addEventListener("DOMContentLoaded", () => {
   const cardContainer = document.getElementById("cardContainer");
   const scrollLeftBtn = document.getElementById("scrollLeft");
   const scrollRightBtn = document.getElementById("scrollRight");
 
-  let scrollInterval;
-  const scrollSpeed = 10; // Adjust this number to make it scroll faster or slower
-
-  function startScrolling(direction) {
-    // Clear any existing intervals to prevent overlapping speeds
-    clearInterval(scrollInterval);
-
-    // Move the container every 15 milliseconds
-    scrollInterval = setInterval(() => {
-      cardContainer.scrollBy({ left: direction * scrollSpeed, behavior: "auto" });
-    }, 15);
-  }
-
-  function stopScrolling() {
-    clearInterval(scrollInterval);
-  }
+  // The amount of pixels to slide per click (adjust as needed)
+  const scrollAmount = 415; 
 
   if (cardContainer) {
     if (scrollLeftBtn) {
-      // Start scrolling left (-1) on hover, stop when the mouse leaves
-      scrollLeftBtn.addEventListener("mouseenter", () => startScrolling(-1));
-      scrollLeftBtn.addEventListener("mouseleave", stopScrolling);
+      scrollLeftBtn.addEventListener("click", () => {
+        cardContainer.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+      });
     }
 
     if (scrollRightBtn) {
-      // Start scrolling right (1) on hover, stop when the mouse leaves
-      scrollRightBtn.addEventListener("mouseenter", () => startScrolling(1));
-      scrollRightBtn.addEventListener("mouseleave", stopScrolling);
+      scrollRightBtn.addEventListener("click", () => {
+        cardContainer.scrollBy({ left: scrollAmount, behavior: "smooth" });
+      });
     }
   }
 });

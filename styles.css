@@ -37,7 +37,7 @@ body {
     margin: 0 auto;
     padding: 0;
     /* Change width to a fixed value instead of 100% */
-    width: 1920px; 
+    width: 1910px; 
     /* Remove max-width if you want it to strictly stay at 1200px */
     min-height: 100vh;
     min-width: 1920px; /* Ensures the body doesn't shrink below 1200px */
@@ -978,22 +978,23 @@ figure {
         height: auto;
         display: block;
     }
-
-    #pricing-1790 .cs-card-group {
+#pricing-1790 .cs-card-group {
         width: 100%;
         max-width: 57rem;
         margin: 3rem 0 0 0;
         padding: 0;
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;        /* Force a horizontal layout globally */
+        flex-wrap: nowrap;          /* Prevent any wrapping onto new lines */
+        align-items: stretch;
+        gap: 1rem;
     }
 
     #pricing-1790 .cs-item {
         text-align: center;
         list-style: none;
-        width: 100%;
         margin: 0;
+        flex: 1;                    /* Equitably divide space just like on desktop */
         padding: clamp(2rem, 2vw, 2.5rem) clamp(1rem, 1.5vw, 2rem);
         background-color: #FFFFFF;
         box-sizing: border-box;
@@ -1170,20 +1171,18 @@ figure {
         align-items: stretch;
     }
 
-    #pricing-1790 .cs-card-group {
+    /* #pricing-1790 .cs-card-group {
         flex-direction: row;
         align-items: stretch;
-        /* NEW: Force cards to stay on a single line */
         flex-wrap: nowrap;
         gap: 1rem;
     }
 
     #pricing-1790 .cs-item {
         height: auto;
-        /* NEW: Reset margins and force equal width distribution */
         margin: 0;
         flex: 1;
-    }
+    } */
 
     #pricing-1790 .cs-item.cs-popular {
         margin: 0;
