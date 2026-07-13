@@ -1,3 +1,5 @@
+// Counters for number
+
 function animateCountUp(el) {
   const target = +el.textContent;     // Final number in HTML
   const duration = 1800;              // one and a half seconds

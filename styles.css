@@ -6,12 +6,17 @@
 
 html {
     scroll-behavior: smooth;
-    overflow-x: hidden;
-    max-width: 1920px;
-    margin: auto;
-
+    overflow-x: scroll;
+    background-color: var(--primary-color);
+    margin: 0;
+    padding: 0;
 }
 
+@media only screen and (min-width: 1200px) and (max-width: 1900px) {
+    body {
+        zoom: 0.75;
+    }
+}
 
 :root {
     --primary-color: rgb(19, 19, 19);
@@ -29,10 +34,15 @@ html {
 
 body {
     background: radial-gradient(circle at 0% 60%, #410228 0, #410228 10%, var(--primary-color) 100%);
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    /* Change width to a fixed value instead of 100% */
+    width: 1920px; 
+    /* Remove max-width if you want it to strictly stay at 1200px */
+    min-height: 100vh;
+    min-width: 1920px; /* Ensures the body doesn't shrink below 1200px */
+    overflow-x: auto; /* Allows horizontal scrollbar if the screen is smaller than 1200px */
 }
-
 
 nav {
     background-color: transparent;
@@ -664,7 +674,8 @@ figure {
     color: white;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 800;
-    margin: auto; /* Keeps it perfectly centered */
+    margin: auto;
+    /* Keeps it perfectly centered */
     display: inline-block;
 }
 
@@ -672,7 +683,8 @@ figure {
     color: white;
     font-family: "Nunito Sans", sans-serif;
     font-weight: 800;
-    margin: auto; /* Keeps it perfectly centered */
+    margin: auto;
+    /* Keeps it perfectly centered */
     display: inline-block;
 }
 
@@ -828,6 +840,7 @@ figure {
         flex-direction: row;
         justify-content: space-between;
     }
+
 }
 
 /* PRICING PAGE */
